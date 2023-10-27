@@ -1,0 +1,45 @@
+api:
+  token: <Пользовательский токен для работы с api>
+# Конфигурационные параметры для работы с vm машинами
+vm:
+  health_load:
+    cpu:
+      # Начальное количество ресурсов
+      init: 10
+      # Нагрузка на этот ресурс при котором машина выключается
+      offload: 0.95
+      # Целевая нагрузка на которую ориентируемся при изменении ресурсов
+      load: 0.80
+      # Минимальный запас ресурсов
+      min_delta: 7
+      # Максимальный запас ресурсов
+      max_delta: 30
+    ram:
+      init: 10
+      offload: 0.95
+      load: 0.80
+      min_delta: 7
+      max_delta: 30
+  # максимальное кол-во машин
+  max_machine_count: 50
+db:
+  health_load:
+    cpu:
+      init: 10
+      offload: 0.95
+      load: 0.82
+      min_delta: 7
+      max_delta: 30
+    ram:
+      init: 10
+      offload: 0.95
+      load: 0.82
+      min_delta: 7
+      max_delta: 30
+  max_machine_count: 50
+scheduler:
+  # промежуток в который происходит проверка ресурсов
+  check_time: 10s
+logger:
+  # адрес по которому отправляются все логи
+  log_url: http://example.com/log
